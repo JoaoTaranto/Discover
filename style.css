@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
+
+/* RESET CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VARIÁVEIS / DARK THEME*/
+:root {
+  --text-color: #fff;
+  --bg-url: url(assets/bg-mobile.jpg);
+  --border-color-btn: rgba(255, 255, 255, 0.5);
+  --bg-color-btn: rgba(255, 255, 255, 0.1);
+  --bg-color-btn-hover: rgba(255, 255, 255, 0.05);
+  --social-links-hover: rgba(255, 255, 255, 0.2);
+  --bg-switch: url(assets/moon-stars.svg);
+}
+
+/* VARIÁVEIS / LIGHT THEME */
+.light {
+  --text-color: #000;
+  --bg-url: url(assets/bg-mobile-light.jpg);
+  --border-color-btn: rgba(0, 0, 0, 0.5);
+  --bg-color-btn: rgba(0, 0, 0, 0.05);
+  --bg-color-btn-hover: rgba(0, 0, 0, 0.02);
+  --social-links-hover: rgba(0, 0, 0, 0.1);
+  --bg-switch: url(assets/sun.svg);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+body {
+  /*
+  background-color: #fff;
+  background-image: url(assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background: color image repeat position/size*/
+
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+#container {
+  width: 360px;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+/* PROFILE */
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+/*  Para elementos INLINE: Elemento pai com text-align:center; Para elementos BLOCK: margin; auto; */
+#profile img {
+  width: 112px;
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+}
+
+/* SWITCH */
+
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: #fff var(--bg-switch) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  /* PROCESSO PARA ALINHAMENTO PERFEITO BUTTON AO MEIO DO SPAN
+    USADO GERALMENTE PARA ITENS E DIVS QUE TEM 'POSITION:ABSOLUTE;' */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--bg-color-btn);
+  border: 1px solid var(--border-color-btn);
+  border-radius: 9999px;
+}
+
+/* LINKS - LISTA */
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+ul li a {
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  background: var(--bg-color-btn);
+  border: 1px solid var(--border-color-btn);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+ul li a:hover {
+  border: 1.5px solid var(--text-color);
+  background: var(--bg-color-btn-hover);
+}
+
+/* SOCIAL ICONS */
+
+#social-icons {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px;
+}
+
+#social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 50%;
+}
+#social-icons a:hover {
+  background: var(--social-links-hover);
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
